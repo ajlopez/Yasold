@@ -107,3 +107,14 @@ exports['decompile return'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile throw'] = function (test) {
+	var result = bc.decompile('fe');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'throw');
+	test.equal(result[0].value, null);
+};
+
