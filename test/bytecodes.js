@@ -96,3 +96,14 @@ exports['decompile jumpdest'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile return'] = function (test) {
+	var result = bc.decompile('f3');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'return');
+	test.equal(result[0].value, null);
+};
+
