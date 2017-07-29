@@ -15,6 +15,16 @@ fe throw #10
 39 codecopy #20
 6000 push 0x00 (memory position) #21
 f3 return (return memory from 0 with length 0x33) #23
-00 #24
+00 stop #24
 6060 push 0x60 #25
-6040525bfe00a165627a7a723058205dcf27880e53b3d302970d2a5e0d862957d827fb80e73b09e18813d3403aaaae0029
+6040 push 0x40
+52 mstore
+5b jumpdest
+fe throw
+00 stop
+a1 log1
+65627a7a723058 push 0x627a7a723058
+20 sha3
+5d
+cf
+27880e53b3d302970d2a5e0d862957d827fb80e73b09e18813d3403aaaae0029

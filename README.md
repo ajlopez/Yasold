@@ -19,6 +19,8 @@ TBD
 - [Porosity: A Decompiler For Blockchain-Based Smart Contracts Bytecode](https://www.comae.io/reports/dc25-msuiche-Porosity-Decompiling-Ethereum-Smart-Contracts-wp.pdf)
 - [Porosity Repository](https://github.com/comaeio/porosity)
 - [Decompiler](https://www.reddit.com/r/ethereum/comments/3gpefj/decompiler/)
+- [How is an ABI stored in bytecode?](https://ethereum.stackexchange.com/questions/7973/how-is-an-abi-stored-in-bytecode)
+- [Can you interact with a contract by only looking at its bytecode?](https://ethereum.stackexchange.com/questions/11608/can-you-interact-with-a-contract-by-only-looking-at-its-bytecode)
 
 ## Samples
 
