@@ -1,6 +1,6 @@
 # Yasold
 
-Yet another Solidity compiler.
+Yet another Solidity decompiler.
 
 ## Installation
 
@@ -16,7 +16,9 @@ TBD
 
 ## References
 
-TBD
+- [Porosity: A Decompiler For Blockchain-Based Smart Contracts Bytecode](https://www.comae.io/reports/dc25-msuiche-Porosity-Decompiling-Ethereum-Smart-Contracts-wp.pdf)
+- [Porosity Repository](https://github.com/comaeio/porosity)
+- [Decompiler](https://www.reddit.com/r/ethereum/comments/3gpefj/decompiler/)
 
 ## Samples
 

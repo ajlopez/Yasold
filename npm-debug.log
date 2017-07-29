@@ -1,0 +1,114 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Software\\nodejs\\node.exe',
+1 verbose cli   'C:\\Software\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@3.10.10
+3 info using node@v6.10.2
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'C:\\git\\Yasold',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\usuario\AppData\Roaming\npm-cache\yasold\0.0.1-alpha\package.tgz not in flight; packing
+9 verbose correctMkdir C:\Users\usuario\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+10 verbose makeDirectory C:\Users\usuario\AppData\Roaming\npm-cache creation not in flight; initializing
+11 verbose makeCacheDir UID & GID are irrelevant on win32
+12 info lifecycle yasold@0.0.1-alpha~prepublish: yasold@0.0.1-alpha
+13 silly lifecycle yasold@0.0.1-alpha~prepublish: no script for prepublish, continuing
+14 verbose tar pack [ 'C:\\Users\\usuario\\AppData\\Roaming\\npm-cache\\yasold\\0.0.1-alpha\\package.tgz',
+14 verbose tar pack   'C:\\git\\Yasold' ]
+15 verbose tarball C:\Users\usuario\AppData\Roaming\npm-cache\yasold\0.0.1-alpha\package.tgz
+16 verbose folder C:\git\Yasold
+17 verbose addLocalTarball adding from inside cache C:\Users\usuario\AppData\Roaming\npm-cache\yasold\0.0.1-alpha\package.tgz
+18 verbose correctMkdir C:\Users\usuario\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+19 silly cache afterAdd yasold@0.0.1-alpha
+20 verbose afterAdd C:\Users\usuario\AppData\Roaming\npm-cache\yasold\0.0.1-alpha\package\package.json not in flight; writing
+21 verbose correctMkdir C:\Users\usuario\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+22 verbose afterAdd C:\Users\usuario\AppData\Roaming\npm-cache\yasold\0.0.1-alpha\package\package.json written
+23 silly publish { name: 'yasold',
+23 silly publish   description: 'Yet another Solidity decompiler, WIP',
+23 silly publish   keywords: [ 'solidity', 'ethereum', 'smartcontract' ],
+23 silly publish   version: '0.0.1-alpha',
+23 silly publish   author:
+23 silly publish    { name: 'Angel \'Java\' Lopez',
+23 silly publish      email: 'webmaster@ajlopez.com',
+23 silly publish      url: 'http://www.ajlopez.com' },
+23 silly publish   repository: { type: 'git', url: 'git://github.com/ajlopez/Yasold.git' },
+23 silly publish   main: './lib/yasold.js',
+23 silly publish   engines: { node: '>= 4.0.0' },
+23 silly publish   scripts: { test: 'simpleunit -r ./test' },
+23 silly publish   dependencies: {},
+23 silly publish   devDependencies: { simpleunit: '0.0.7' },
+23 silly publish   readme: '# Yasold\r\n\r\nYet another Solidity compiler.\r\n\r\n## Installation\r\n\r\nVia npm on Node:\r\n\r\n```\r\nnpm install yasold\r\n```\r\n\r\n## Usage\r\n\r\nTBD\r\n\r\n## References\r\n\r\nTBD\r\n\r\n## Samples\r\n\r\nTBD\r\n\r\n## Versions\r\n\r\nTBD\r\n\r\n## Contribution\r\n\r\nFeel free to [file issues](https://github.com/ajlopez/Yasold) and submit\r\n[pull requests](https://github.com/ajlopez/Yasold/pulls) � contributions are\r\nwelcome.\r\n\r\nIf you submit a pull request, please be sure to add or update corresponding\r\ntest cases, and ensure that `npm test` continues to pass.\r\n\r\n',
+23 silly publish   readmeFilename: 'README.md',
+23 silly publish   gitHead: '2b7dca0d05beeea6e7d4ea1ebf1852e163b7d915',
+23 silly publish   bugs: { url: 'https://github.com/ajlopez/Yasold/issues' },
+23 silly publish   homepage: 'https://github.com/ajlopez/Yasold#readme',
+23 silly publish   _id: 'yasold@0.0.1-alpha',
+23 silly publish   _shasum: 'bc02eb12f53fa78da19a5d6321729c230b206a14',
+23 silly publish   _from: '.' }
+24 verbose getPublishConfig undefined
+25 silly mapToRegistry name yasold
+26 silly mapToRegistry using default registry
+27 silly mapToRegistry registry https://registry.npmjs.org/
+28 silly mapToRegistry data Result {
+28 silly mapToRegistry   raw: 'yasold',
+28 silly mapToRegistry   scope: null,
+28 silly mapToRegistry   escapedName: 'yasold',
+28 silly mapToRegistry   name: 'yasold',
+28 silly mapToRegistry   rawSpec: '',
+28 silly mapToRegistry   spec: 'latest',
+28 silly mapToRegistry   type: 'tag' }
+29 silly mapToRegistry uri https://registry.npmjs.org/yasold
+30 verbose publish registryBase https://registry.npmjs.org/
+31 silly publish uploading C:\Users\usuario\AppData\Roaming\npm-cache\yasold\0.0.1-alpha\package.tgz
+32 verbose request uri https://registry.npmjs.org/yasold
+33 verbose request sending authorization for write operation
+34 info attempt registry request try #1 at 12:42:02
+35 verbose request using bearer token for auth
+36 verbose request id 245653d693ddcb2c
+37 http request PUT https://registry.npmjs.org/yasold
+38 http 403 https://registry.npmjs.org/yasold
+39 verbose headers { 'content-type': 'application/json',
+39 verbose headers   'cache-control': 'max-age=300',
+39 verbose headers   'content-length': '101',
+39 verbose headers   'accept-ranges': 'bytes',
+39 verbose headers   date: 'Sat, 29 Jul 2017 15:42:00 GMT',
+39 verbose headers   via: '1.1 varnish',
+39 verbose headers   connection: 'keep-alive',
+39 verbose headers   'x-served-by': 'cache-gig17033-GIG',
+39 verbose headers   'x-cache': 'MISS',
+39 verbose headers   'x-cache-hits': '0',
+39 verbose headers   'x-timer': 'S1501342920.852944,VS0,VE814',
+39 verbose headers   vary: 'Accept-Encoding, Accept' }
+40 verbose request invalidating C:\Users\usuario\AppData\Roaming\npm-cache\registry.npmjs.org\yasold on PUT
+41 error publish Failed PUT 403
+42 verbose stack Error: "You cannot publish over the previously published version 0.0.1-alpha." : yasold
+42 verbose stack     at makeError (C:\Software\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:302:12)
+42 verbose stack     at CachingRegistryClient.<anonymous> (C:\Software\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:290:14)
+42 verbose stack     at Request._callback (C:\Software\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:210:14)
+42 verbose stack     at Request.self.callback (C:\Software\nodejs\node_modules\npm\node_modules\request\request.js:187:22)
+42 verbose stack     at emitTwo (events.js:106:13)
+42 verbose stack     at Request.emit (events.js:191:7)
+42 verbose stack     at Request.<anonymous> (C:\Software\nodejs\node_modules\npm\node_modules\request\request.js:1048:10)
+42 verbose stack     at emitOne (events.js:96:13)
+42 verbose stack     at Request.emit (events.js:188:7)
+42 verbose stack     at IncomingMessage.<anonymous> (C:\Software\nodejs\node_modules\npm\node_modules\request\request.js:969:12)
+43 verbose statusCode 403
+44 verbose pkgid yasold
+45 verbose cwd C:\git\Yasold
+46 error Windows_NT 10.0.14393
+47 error argv "C:\\Software\\nodejs\\node.exe" "C:\\Software\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+48 error node v6.10.2
+49 error npm  v3.10.10
+50 error code E403
+51 error "You cannot publish over the previously published version 0.0.1-alpha." : yasold
+52 error If you need help, you may report this error at:
+52 error     <https://github.com/npm/npm/issues>
+53 verbose exit [ 1, true ]
