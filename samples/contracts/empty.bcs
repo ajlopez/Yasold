@@ -1,1 +1,18 @@
-60606040523415600b57fe5b5b60338060196000396000f30060606040525bfe00a165627a7a723058205dcf27880e53b3d302970d2a5e0d862957d827fb80e73b09e18813d3403aaaae0029
+6060 push 0x60  #0
+6040 push 0x40  #2
+52 mstore (save word 0x60 == 96 at memory position 0x40 == 64) #4
+34 callvalue #5
+15 iszero #6
+600b push 0x0b #7
+57 jumpi #9
+fe throw #10
+5b jumpdest #11
+5b jumpdest #12
+6033 push 0x33 #13
+80 dup1         (code length == 0x33 == 53) #15
+6019 push 0x19  (code offset == 0x19 == 25) #16
+6000 push 0x00  (memory destination) #18
+39 codecopy #20
+6000 push 0x00 (memory position) #21
+f3 return (return memory from 0 with length 0x33) #23
+0060606040525bfe00a165627a7a723058205dcf27880e53b3d302970d2a5e0d862957d827fb80e73b09e18813d3403aaaae0029
