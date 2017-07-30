@@ -129,3 +129,15 @@ exports['decompile dup1'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile swap1'] = function (test) {
+	var result = bc.decompile('90');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'swap1');
+	test.equal(result[0].value, null);
+};
+
+
