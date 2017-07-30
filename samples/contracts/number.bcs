@@ -1,0 +1,34 @@
+6060
+6040
+52
+34
+15
+600b
+57
+fe
+5b
+5b
+602a push 0x2a == 42
+6000 push 0x00
+81 dup2 (0x2a 0x00 0x2a)
+90 swap1 (0x2a 0x2a 0x00)
+55 sstore (store 42 at memory 00)
+50 pop (empty stack)
+5b jumpdest
+5b jumpdest
+6033 (code length)
+80 dup1
+6023 (code offset)
+6000 (memory destination)
+39 codecopy
+6000 (0x33 0x00)
+f3 return
+00 stop
+6060 push 0x60
+6040 push 0x40
+52 mstore (store 0x60 at memory 0x40)
+5b jumpdest
+fe throw
+00 stop
+a165627a7a72305820dd825d363cf409cdf798155fade531e9b855059f088ac71049589b1ea2d6adc20029
+
