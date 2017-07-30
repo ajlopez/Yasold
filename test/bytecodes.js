@@ -63,6 +63,17 @@ exports['decompile two push1, mstore and callvalue'] = function (test) {
 	test.equal(result[3].value, null);
 };
 
+exports['decompile codecopy'] = function (test) {
+	var result = bc.decompile('39');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'codecopy');
+	test.equal(result[0].value, null);
+};
+
 exports['decompile iszero'] = function (test) {
 	var result = bc.decompile('15');
 	
