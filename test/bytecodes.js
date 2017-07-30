@@ -151,4 +151,14 @@ exports['decompile pop'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile stop'] = function (test) {
+	var result = bc.decompile('00');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'stop');
+	test.equal(result[0].value, null);
+};
 
