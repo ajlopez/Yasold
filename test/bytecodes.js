@@ -1,6 +1,15 @@
 
 var bc = require('../lib/bytecodes');
 
+function toHex(value) {
+	var hex = value.toString(16);
+	
+	if (hex.length % 2)
+		hex = '0' + hex;
+		
+	return hex;
+}
+
 exports['decompile push1'] = function (test) {
 	var result = bc.decompile('6060');
 	
@@ -149,6 +158,19 @@ exports['decompile swap1'] = function (test) {
 	
 	test.equal(result[0].opcode, 'swap1');
 	test.equal(result[0].value, null);
+};
+
+exports['decompile swaps'] = function (test) {
+	for (var k = 1; k <= 16; k++) {
+		var result = bc.decompile(toHex(9 * 16 + k - 1));
+		
+		test.ok(result);
+		test.ok(Array.isArray(result));
+		test.equal(result.length, 1);
+		
+		test.equal(result[0].opcode, 'swap' + k);
+		test.equal(result[0].value, null);
+	}
 };
 
 exports['decompile pop'] = function (test) {
