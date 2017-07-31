@@ -56,5 +56,15 @@ exports['decompile two push1, mstore, stop and skip invalid opcode continuation'
 	test.equal(result[3].offset, 5);
 };
 
+exports['decompile empty contract bytecodes'] = function (test) {
+	var bytecodes = '60606040523415600b57fe5b5b60338060196000396000f30060606040525bfe00' +
+		'a165627a7a723058205dcf27880e53b3d302970d2a5e0d862957d827fb80e73b09e18813d3403aaaae0029';
+	
+	var result = yasold.decompile(bytecodes);
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 24);
+};
 
 
