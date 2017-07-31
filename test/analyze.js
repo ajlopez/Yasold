@@ -22,3 +22,13 @@ exports['analyze with opcodes'] = function (test) {
 	test.equal(result.opcodes[2].offset, 4);
 };
 
+exports['analyze recognizes memory init'] = function (test) {
+	var result = yasold.analyze('6060604052');
+	
+	test.ok(result);
+	test.ok(result.inits);
+	test.ok(Array.isArray(result.inits));
+	test.equal(result.inits.length, 1);
+	test.equal(result.inits[0].position, 0);
+};
+
