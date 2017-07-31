@@ -32,3 +32,14 @@ exports['analyze recognizes memory init'] = function (test) {
 	test.equal(result.inits[0].position, 0);
 };
 
+exports['analyze recognizes two memory inits'] = function (test) {
+	var result = yasold.analyze('606060405200606060405200');
+	
+	test.ok(result);
+	test.ok(result.inits);
+	test.ok(Array.isArray(result.inits));
+	test.equal(result.inits.length, 2);
+	test.equal(result.inits[0].position, 0);
+	test.equal(result.inits[1].position, 4);
+};
+
