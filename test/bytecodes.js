@@ -173,6 +173,19 @@ exports['decompile swaps'] = function (test) {
 	}
 };
 
+exports['decompile dups'] = function (test) {
+	for (var k = 1; k <= 16; k++) {
+		var result = bc.decompile(toHex(8 * 16 + k - 1));
+		
+		test.ok(result);
+		test.ok(Array.isArray(result));
+		test.equal(result.length, 1);
+		
+		test.equal(result[0].opcode, 'dup' + k);
+		test.equal(result[0].value, null);
+	}
+};
+
 exports['decompile pop'] = function (test) {
 	var result = bc.decompile('50');
 	
