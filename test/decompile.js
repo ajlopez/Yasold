@@ -65,6 +65,9 @@ exports['decompile empty contract bytecodes'] = function (test) {
 	test.ok(result);
 	test.ok(Array.isArray(result));
 	test.equal(result.length, 24);
+		
+	test.equal(result[23].opcode, 'stop');
+	test.equal(result[23].value, null);
 };
 
 
