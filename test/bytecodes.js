@@ -186,6 +186,25 @@ exports['decompile dups'] = function (test) {
 	}
 };
 
+exports['decompile pushs'] = function (test) {
+	for (var k = 1; k <= 32; k++) {
+        var code = toHex(6 * 16 + k - 1);
+        var value = '';
+        
+        for (var j = 1; j <= k; j++)
+            value += toHex(j);
+        
+		var result = bc.decompile(code + value);
+		
+		test.ok(result);
+		test.ok(Array.isArray(result));
+		test.equal(result.length, 1);
+		
+		test.equal(result[0].opcode, 'push' + k);
+		test.equal(result[0].value, '0x' + value);
+	}
+};
+
 exports['decompile pop'] = function (test) {
 	var result = bc.decompile('50');
 	
