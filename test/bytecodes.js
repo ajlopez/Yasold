@@ -249,3 +249,25 @@ exports['decompile eq'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile lt'] = function (test) {
+	var result = bc.decompile('10');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'lt');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile gt'] = function (test) {
+	var result = bc.decompile('11');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'gt');
+	test.equal(result[0].value, null);
+};
+
