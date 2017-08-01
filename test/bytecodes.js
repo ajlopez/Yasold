@@ -271,6 +271,28 @@ exports['decompile gt'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile slt'] = function (test) {
+	var result = bc.decompile('12');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'slt');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile sgt'] = function (test) {
+	var result = bc.decompile('13');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'sgt');
+	test.equal(result[0].value, null);
+};
+
 exports['decompile and'] = function (test) {
 	var result = bc.decompile('16');
 	
