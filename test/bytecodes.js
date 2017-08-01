@@ -425,4 +425,26 @@ exports['decompile mload'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile sload'] = function (test) {
+	var result = bc.decompile('54');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'sload');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile sstore'] = function (test) {
+	var result = bc.decompile('55');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'sstore');
+	test.equal(result[0].value, null);
+};
+
 
