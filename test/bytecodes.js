@@ -72,6 +72,83 @@ exports['decompile two push1, mstore and callvalue'] = function (test) {
 	test.equal(result[3].value, null);
 };
 
+exports['decompile add'] = function (test) {
+	var result = bc.decompile('01');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'add');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile mul'] = function (test) {
+	var result = bc.decompile('02');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'mul');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile sub'] = function (test) {
+	var result = bc.decompile('03');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'sub');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile div'] = function (test) {
+	var result = bc.decompile('04');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'div');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile sdiv'] = function (test) {
+	var result = bc.decompile('05');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'sdiv');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile mod'] = function (test) {
+	var result = bc.decompile('06');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'mod');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile smod'] = function (test) {
+	var result = bc.decompile('07');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'smod');
+	test.equal(result[0].value, null);
+};
+
 exports['decompile codecopy'] = function (test) {
 	var result = bc.decompile('39');
 	
