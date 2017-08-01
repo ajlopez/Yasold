@@ -271,3 +271,37 @@ exports['decompile gt'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile and'] = function (test) {
+	var result = bc.decompile('16');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'and');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile or'] = function (test) {
+	var result = bc.decompile('17');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'or');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile xor'] = function (test) {
+	var result = bc.decompile('18');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'xor');
+	test.equal(result[0].value, null);
+};
+
+
