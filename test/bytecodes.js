@@ -414,4 +414,15 @@ exports['decompile not'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile mload'] = function (test) {
+	var result = bc.decompile('51');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'mload');
+	test.equal(result[0].value, null);
+};
+
 
