@@ -1,8 +1,8 @@
-6060
-6040
-52
-34
-15
+6060 		#00
+6040 		#02
+52			#04
+34			#05
+15			#06
 61000c
 57
 fe
@@ -45,65 +45,64 @@ f3
 14
 6079
 57
-5b
-fe
-5b
-34
-15
+5b jumpdest
+fe throw
+5b jumpdest
+34 callvalue
+15 iszero
 604b
-57
-fe
-5b
+57 jumpi
+fe trhow
+5b jumpdest
 605f
 6004
-80
-80
-35
-90
+80 dup1
+80 dup1
+35 calldataload
+90 swap1
 6020
-01
-90
-91
-90
-50
-50
+01 add
+90 swap1
+91 swap2
+90 swap1
+50 pop
+50 pop
 609c
-56
-5b
+56 jump
+5b jumpdest
 6040
-51
-80
-82
-15
-15
-15
-15
-81
-52
+51 mload
+80 dup1
+82 dup3
+15 iszero
+15 iszero
+15 iszero
+15 iszero
+81 dup2
+52 mstore
 6020
-01
-91
-50
-50
+01 add
+91 swap2
+50 pop
+50 pop
 6040
-51
-80
-91
-03
-90
-f3
-5b
-34
-15
-60
-80
-57
-fe
-5b
+51 mload
+80 dup1
+91 swap2
+03 sub
+90 swap1
+f3 return
+5b jumpdest
+34 callvalue
+15 iszero
+6080
+57 jumpi
+fe throw
+5b jumpdest
 6086
 60ab
-56
-5b
+56 jump
+5b jumpdest
 6040
 51
 80
@@ -127,22 +126,22 @@ f3
 6000
 54
 82
-13
+13 sgt
 90
-50
-5b
+50 pop
+5b jumpdest
 91
 90
-50
-56
-5b
+50 pop
+56 jump
+5b jumpdest
 6000
 6000
-54
-90
-50
-5b
-90
-56
-00
+54 sload
+90 swap1
+50 pop
+5b jumpdest
+90 swap1
+56 jump
+00 stop
 a165627a7a7230582061f2da92ee7b8f4dc09365881cb10c66e8504e1a32b8edf99280235a543dbfd30029
