@@ -43,3 +43,15 @@ exports['analyze recognizes two memory inits'] = function (test) {
 	test.equal(result.inits[1].position, 4);
 };
 
+exports['analyze recognizes jumpdests'] = function (test) {
+	var result = yasold.analyze('60605b60015b50505b');
+	
+	test.ok(result);
+	test.ok(result.jumpdest);
+	test.ok(Array.isArray(result.jumpdest));
+	test.equal(result.jumpdest.length, 3);
+	test.equal(result.jumpdest[0].position, 1);
+	test.equal(result.jumpdest[1].position, 3);
+	test.equal(result.jumpdest[2].position, 5);
+};
+
