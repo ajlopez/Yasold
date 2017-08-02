@@ -52,6 +52,6 @@ exports['analyze recognizes jumpdests'] = function (test) {
 	test.equal(result.jumpdest.length, 3);
 	test.equal(result.jumpdest[0].position, 1);
 	test.equal(result.jumpdest[1].position, 3);
-	test.equal(result.jumpdest[2].position, 5);
+	test.equal(result.jumpdest[2].position, 6);
 };
 
