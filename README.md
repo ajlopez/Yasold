@@ -21,6 +21,9 @@ TBD
 - [Decompiler](https://www.reddit.com/r/ethereum/comments/3gpefj/decompiler/)
 - [How is an ABI stored in bytecode?](https://ethereum.stackexchange.com/questions/7973/how-is-an-abi-stored-in-bytecode)
 - [Can you interact with a contract by only looking at its bytecode?](https://ethereum.stackexchange.com/questions/11608/can-you-interact-with-a-contract-by-only-looking-at-its-bytecode)
+- [EVM Disassembler](https://github.com/arachnid/evmdis)
+- [Oyente An automatic EVM code analyzer](https://github.com/arachnid/evmdis)
+- [Dr. Y's Ethereum Contract Analyzer](http://dry.yoichihirai.com/)
 
 ## Samples
 
