@@ -72,6 +72,28 @@ exports['decompile two push1, mstore and callvalue'] = function (test) {
 	test.equal(result[3].value, null);
 };
 
+exports['decompile callvalue'] = function (test) {
+	var result = bc.decompile('34');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'callvalue');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile calldatavalue'] = function (test) {
+	var result = bc.decompile('35');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'calldatavalue');
+	test.equal(result[0].value, null);
+};
+
 exports['decompile add'] = function (test) {
 	var result = bc.decompile('01');
 	
@@ -411,6 +433,17 @@ exports['decompile not'] = function (test) {
 	test.equal(result.length, 1);
 	
 	test.equal(result[0].opcode, 'not');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile exp'] = function (test) {
+	var result = bc.decompile('0a');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'exp');
 	test.equal(result[0].value, null);
 };
 

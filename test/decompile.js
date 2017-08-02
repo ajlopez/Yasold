@@ -70,4 +70,18 @@ exports['decompile empty contract bytecodes'] = function (test) {
 	test.equal(result[23].value, null);
 };
 
+exports['decompile optimized numbers contract bytecodes'] = function (test) {
+	var bytecodes = '6060604052341561000c57fe5b5b602a6000555b5b60ab806100226000396000f300606060405263ffffffff60e060020a600035041663c06b268e8114602a578063f2c9ecd814604e575bfe5b3415603157fe5b603a600435606d565b604080519115158252519081900360200190f35b3415605557fe5b605b6078565b60408051918252519081900360200190f35b60005481135b919050565b6000545b905600a165627a7a72305820824225b9ca70a4014d4a40c73536edb5df68a7fd08eee758ab76a5f39cf7e3000029';
+	
+	var result = yasold.decompile(bytecodes);
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 119);
+		
+	test.equal(result[118].opcode, 'stop');
+	test.equal(result[118].value, null);
+};
+
+
 
