@@ -32,6 +32,16 @@ exports['decompile two push1 and mstore and calculate offsets'] = function (test
 	test.equal(result[2].offset, 4);
 };
 
+exports['decompile two push1 and mstore to text'] = function (test) {
+	var result = yasold.decompileToText('6060604052');
+	
+	test.ok(result);
+	test.equal(typeof result, 'string');
+	test.ok(result.indexOf('push1 0x60') >= 0);
+	test.ok(result.indexOf('push1 0x40') >= 0);
+	test.ok(result.indexOf('mstore') >= 0);
+};
+
 exports['decompile two push1, mstore, stop and skip invalid opcode continuation'] = function (test) {
 	var result = yasold.decompile('606060405200a1');
 	
