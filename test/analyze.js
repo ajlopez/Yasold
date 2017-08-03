@@ -41,6 +41,8 @@ exports['analyze recognizes two memory inits'] = function (test) {
 	test.equal(result.inits.length, 2);
 	test.equal(result.inits[0].position, 0);
 	test.equal(result.inits[1].position, 4);
+	
+	test.equal(result.opcodes[4].offset, 0);
 };
 
 exports['analyze recognizes jumpdests'] = function (test) {
