@@ -57,14 +57,14 @@ exports['analyze recognizes jumpdests'] = function (test) {
 	test.equal(result.jumpdest[2].position, 6);
 };
 
-exports['jumpdests with label comments'] = function (test) {
+exports['jumpdests with labels'] = function (test) {
 	var result = yasold.analyze('60605b60015b50505b');
 	
 	test.ok(result);
 	test.ok(result.jumpdest);
 	test.ok(Array.isArray(result.jumpdest));
 	test.equal(result.jumpdest.length, 3);
-	test.equal(result.opcodes[result.jumpdest[0].position].comments[0], 'label1');
-	test.equal(result.opcodes[result.jumpdest[1].position].comments[0], 'label2');
-	test.equal(result.opcodes[result.jumpdest[2].position].comments[0], 'label3');
+	test.equal(result.opcodes[result.jumpdest[0].position].label, 'label1');
+	test.equal(result.opcodes[result.jumpdest[1].position].label, 'label2');
+	test.equal(result.opcodes[result.jumpdest[2].position].label, 'label3');
 };
