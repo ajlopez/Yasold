@@ -53,7 +53,11 @@ exports['analyze recognizes jumpi and jump with one byte address'] = function (t
 	test.ok(Array.isArray(result.jumps));
 	test.equal(result.jumps.length, 2);
 	test.equal(result.jumps[0].position, 4);
+	test.equal(result.jumps[0].address, 9);
+	test.equal(result.opcodes[result.jumps[0].position].target, 6);
 	test.equal(result.jumps[1].position, 8);
+	test.equal(result.jumps[1].address, 9);
+	test.equal(result.opcodes[result.jumps[1].position].target, 6);
 };
 
 exports['analyze recognizes jumpdests'] = function (test) {
