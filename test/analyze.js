@@ -39,8 +39,9 @@ exports['analyze with stack'] = function (test) {
 	test.equal(result.opcodes[1].opcode, 'push1');
 	test.ok(result.opcodes[1].stack);
 	test.ok(result.opcodes[1].stack.length);
-	test.equal(result.opcodes[1].stack.length, 1);
-	test.equal(result.opcodes[1].stack[0], '0x40');
+	test.equal(result.opcodes[1].stack.length, 2);
+	test.equal(result.opcodes[1].stack[0], '0x60');
+	test.equal(result.opcodes[1].stack[1], '0x40');
 	
 	test.equal(result.opcodes[2].opcode, 'mstore');
 	test.ok(result.opcodes[1].stack);
