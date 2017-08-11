@@ -44,8 +44,8 @@ exports['analyze with stack'] = function (test) {
 	test.equal(result.opcodes[1].stack[1], '0x40');
 	
 	test.equal(result.opcodes[2].opcode, 'mstore');
-	test.ok(result.opcodes[1].stack);
-	test.equal(result.opcodes[1].stack.length, 0);
+	test.ok(result.opcodes[2].stack);
+	test.equal(result.opcodes[2].stack.length, 0);
 };
 
 exports['analyze recognizes memory init'] = function (test) {
