@@ -28,8 +28,10 @@ TBD
 - [Diving Into The Ethereum VM Part 2 — How I Learned To Start Worrying And Count The Storage Cost](https://medium.com/@hayeah/diving-into-the-ethereum-vm-part-2-storage-layout-bc5349cb11b7)
 - [Diving Into The Ethereum VM Part III — The Hidden Costs of Arrays](https://medium.com/@hayeah/diving-into-the-ethereum-vm-the-hidden-costs-of-arrays-28e119f04a9b)
 - [Diving Into The Ethereum VM Part IV — How To Decipher A Smart Contract Method Call](https://medium.com/@hayeah/how-to-decipher-a-smart-contract-method-call-8ee980311603)
+- [Diving Into The Ethereum VM Part V — The Smart Contract Creation Process](https://medium.com/@hayeah/diving-into-the-ethereum-vm-part-5-the-smart-contract-creation-process-cb7b6133b855)
 - [How I Snatched 153,037 ETH After A Bad Tinder Date](https://medium.com/@rtaylor30/how-i-snatched-your-153-037-eth-after-a-bad-tinder-date-d1d84422a50b)
 - [Introducing Mythril: A framework for bug hunting on the Ethereum blockchain](https://medium.com/@muellerberndt/introducing-mythril-a-framework-for-bug-hunting-on-the-ethereum-blockchain-9dc5588f82f6)
+- [Next-Generation Virtual Machine Sets Future Standard Of Blockchain Development](https://paymentweek.com/2017-10-24-next-generation-virtual-machine-sets-future-standard-blockchain-development/)
 
 ## Samples
 
