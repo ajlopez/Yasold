@@ -491,4 +491,17 @@ exports['decompile sha3'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile logs'] = function (test) {
+	for (var k = 0; k < 5; k++) {
+		var result = bc.decompile(toHex(10 * 16 + k));
+		
+		test.ok(result);
+		test.ok(Array.isArray(result));
+		test.equal(result.length, 1);
+		
+		test.equal(result[0].opcode, 'log' + k);
+		test.equal(result[0].value, null);
+	}
+};
+
 
