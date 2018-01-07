@@ -491,6 +491,28 @@ exports['decompile sha3'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile revert'] = function (test) {
+	var result = bc.decompile('fd');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'revert');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile suicide'] = function (test) {
+	var result = bc.decompile('ff');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'suicide');
+	test.equal(result[0].value, null);
+};
+
 exports['decompile logs'] = function (test) {
 	for (var k = 0; k < 5; k++) {
 		var result = bc.decompile(toHex(10 * 16 + k));
