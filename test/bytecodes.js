@@ -513,6 +513,50 @@ exports['decompile suicide'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile create'] = function (test) {
+	var result = bc.decompile('f0');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'create');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile call'] = function (test) {
+	var result = bc.decompile('f1');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'call');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile delegate call'] = function (test) {
+	var result = bc.decompile('f4');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'delegatecall');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile static call'] = function (test) {
+	var result = bc.decompile('fa');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'staticcall');
+	test.equal(result[0].value, null);
+};
+
 exports['decompile logs'] = function (test) {
 	for (var k = 0; k < 5; k++) {
 		var result = bc.decompile(toHex(10 * 16 + k));
