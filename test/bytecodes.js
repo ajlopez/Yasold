@@ -557,6 +557,17 @@ exports['decompile static call'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile call code'] = function (test) {
+	var result = bc.decompile('f2');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'callcode');
+	test.equal(result[0].value, null);
+};
+
 exports['decompile logs'] = function (test) {
 	for (var k = 0; k < 5; k++) {
 		var result = bc.decompile(toHex(10 * 16 + k));
