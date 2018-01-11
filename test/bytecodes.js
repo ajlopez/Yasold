@@ -579,6 +579,17 @@ exports['decompile gas'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile pc'] = function (test) {
+	var result = bc.decompile('58');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'pc');
+	test.equal(result[0].value, null);
+};
+
 exports['decompile logs'] = function (test) {
 	for (var k = 0; k < 5; k++) {
 		var result = bc.decompile(toHex(10 * 16 + k));
