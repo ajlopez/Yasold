@@ -590,6 +590,17 @@ exports['decompile pc'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile msize'] = function (test) {
+	var result = bc.decompile('59');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'msize');
+	test.equal(result[0].value, null);
+};
+
 exports['decompile logs'] = function (test) {
 	for (var k = 0; k < 5; k++) {
 		var result = bc.decompile(toHex(10 * 16 + k));
