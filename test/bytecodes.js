@@ -625,4 +625,15 @@ exports['decompile logs'] = function (test) {
 	}
 };
 
+exports['decompile mstore8'] = function (test) {
+	var result = bc.decompile('53');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'mstore8');
+	test.equal(result[0].value, null);
+};
+
 
