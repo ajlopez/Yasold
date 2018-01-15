@@ -636,4 +636,16 @@ exports['decompile mstore8'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile gaslimit'] = function (test) {
+	var result = bc.decompile('45');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'gaslimit');
+	test.equal(result[0].value, null);
+};
+
+
 
