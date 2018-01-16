@@ -658,5 +658,16 @@ exports['decompile number'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile coinbase'] = function (test) {
+	var result = bc.decompile('41');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'coinbase');
+	test.equal(result[0].value, null);
+};
+
 
 
