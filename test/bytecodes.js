@@ -669,5 +669,14 @@ exports['decompile coinbase'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
-
+exports['decompile timestamp'] = function (test) {
+	var result = bc.decompile('42');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'timestamp');
+	test.equal(result[0].value, null);
+};
 
