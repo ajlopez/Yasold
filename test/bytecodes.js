@@ -680,3 +680,13 @@ exports['decompile timestamp'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile difficulty'] = function (test) {
+	var result = bc.decompile('44');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'difficulty');
+	test.equal(result[0].value, null);
+};
