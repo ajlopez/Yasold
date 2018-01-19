@@ -690,3 +690,14 @@ exports['decompile difficulty'] = function (test) {
 	test.equal(result[0].opcode, 'difficulty');
 	test.equal(result[0].value, null);
 };
+
+exports['decompile address'] = function (test) {
+	var result = bc.decompile('30');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'address');
+	test.equal(result[0].value, null);
+};
