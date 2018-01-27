@@ -32,7 +32,7 @@ exports['analyze push with nodes'] = function (test) {
 	
 	test.equal(result.nodes[0].from, 0);
 	test.equal(result.nodes[0].to, 0);
-	test.equal(result.nodes[0].delta, 1);
+	test.equal(result.nodes[0].values, 1);
 };
 
 exports['analyze with stack'] = function (test) {
