@@ -22,6 +22,19 @@ exports['analyze with opcodes'] = function (test) {
 	test.equal(result.opcodes[2].offset, 4);
 };
 
+exports['analyze push with nodes'] = function (test) {
+	var result = yasold.analyze('6060');
+	
+	test.ok(result);
+	test.ok(result.nodes);
+	test.ok(Array.isArray(result.nodes));
+	test.equal(result.nodes.length, 1);
+	
+	test.equal(result.nodes[0].from, 0);
+	test.equal(result.nodes[0].to, 0);
+	test.equal(result.nodes[0].delta, 1);
+};
+
 exports['analyze with stack'] = function (test) {
 	var result = yasold.analyze('6060604052');
 	
