@@ -79,6 +79,26 @@ exports['analyze push and iszero'] = function (test) {
 	test.equal(result.nodes[0].nodes[0].values, 1);
 };
 
+exports['analyze push and jump'] = function (test) {
+	var result = yasold.analyze('606056');
+	
+	test.ok(result);
+	test.ok(result.nodes);
+	test.ok(Array.isArray(result.nodes));
+	test.equal(result.nodes.length, 1);
+	
+	test.equal(result.nodes[0].from, 0);
+	test.equal(result.nodes[0].to, 1);
+	test.equal(result.nodes[0].values, 0);
+	test.ok(result.nodes[0].nodes);
+	test.ok(Array.isArray(result.nodes[0].nodes));
+	test.equal(result.nodes[0].nodes.length, 1);
+	
+	test.equal(result.nodes[0].nodes[0].from, 0);
+	test.equal(result.nodes[0].nodes[0].to, 0);
+	test.equal(result.nodes[0].nodes[0].values, 1);
+};
+
 exports['analyze with stack'] = function (test) {
 	var result = yasold.analyze('6060604052');
 	
