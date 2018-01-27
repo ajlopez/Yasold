@@ -83,17 +83,6 @@ exports['decompile callvalue'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
-exports['decompile calldatavalue'] = function (test) {
-	var result = bc.decompile('35');
-	
-	test.ok(result);
-	test.ok(Array.isArray(result));
-	test.equal(result.length, 1);
-	
-	test.equal(result[0].opcode, 'calldatavalue');
-	test.equal(result[0].value, null);
-};
-
 exports['decompile add'] = function (test) {
 	var result = bc.decompile('01');
 	
@@ -168,6 +157,28 @@ exports['decompile smod'] = function (test) {
 	test.equal(result.length, 1);
 	
 	test.equal(result[0].opcode, 'smod');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile addmod'] = function (test) {
+	var result = bc.decompile('08');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'addmod');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile mulmod'] = function (test) {
+	var result = bc.decompile('09');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'mulmod');
 	test.equal(result[0].value, null);
 };
 
@@ -447,6 +458,17 @@ exports['decompile exp'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile signextend'] = function (test) {
+	var result = bc.decompile('0b');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'signextend');
+	test.equal(result[0].value, null);
+};
+
 exports['decompile mload'] = function (test) {
 	var result = bc.decompile('51');
 	
@@ -701,3 +723,115 @@ exports['decompile address'] = function (test) {
 	test.equal(result[0].opcode, 'address');
 	test.equal(result[0].value, null);
 };
+
+exports['decompile balance'] = function (test) {
+	var result = bc.decompile('31');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'balance');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile origin'] = function (test) {
+	var result = bc.decompile('32');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'origin');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile caller'] = function (test) {
+	var result = bc.decompile('33');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'caller');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile calldataload'] = function (test) {
+	var result = bc.decompile('35');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'calldataload');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile calldatasize'] = function (test) {
+	var result = bc.decompile('36');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'calldatasize');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile calldatacopy'] = function (test) {
+	var result = bc.decompile('37');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'calldatacopy');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile codesize'] = function (test) {
+	var result = bc.decompile('38');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'codesize');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile gasprice'] = function (test) {
+	var result = bc.decompile('3a');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'gasprice');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile extcodesize'] = function (test) {
+	var result = bc.decompile('3b');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'extcodesize');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile extcodecopy'] = function (test) {
+	var result = bc.decompile('3c');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'extcodecopy');
+	test.equal(result[0].value, null);
+};
+
+
