@@ -834,4 +834,25 @@ exports['decompile extcodecopy'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile returndatasize'] = function (test) {
+	var result = bc.decompile('3d');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'returndatasize');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile returndatacopy'] = function (test) {
+	var result = bc.decompile('3e');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'returndatacopy');
+	test.equal(result[0].value, null);
+};
 
