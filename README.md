@@ -31,6 +31,7 @@ TBD
 - [Diving Into The Ethereum VM Part V — The Smart Contract Creation Process](https://medium.com/@hayeah/diving-into-the-ethereum-vm-part-5-the-smart-contract-creation-process-cb7b6133b855)
 - [How I Snatched 153,037 ETH After A Bad Tinder Date](https://medium.com/@rtaylor30/how-i-snatched-your-153-037-eth-after-a-bad-tinder-date-d1d84422a50b)
 - [Introducing Mythril: A framework for bug hunting on the Ethereum blockchain](https://medium.com/@muellerberndt/introducing-mythril-a-framework-for-bug-hunting-on-the-ethereum-blockchain-9dc5588f82f6)
+- [Introduction to Mythril Classic and Symbolic Execution](https://medium.com/@joran.honig/introduction-to-mythril-classic-and-symbolic-execution-ef59339f259b)
 - [Next-Generation Virtual Machine Sets Future Standard Of Blockchain Development](https://paymentweek.com/2017-10-24-next-generation-virtual-machine-sets-future-standard-blockchain-development/)
 - [EVM binary static analysis](https://github.com/trailofbits/rattle)
 - [Decompiling Ethereum Smart Contracts](https://medium.com/coinmonks/decompiling-ethereum-smart-contracts-b283ae80f8a0)
