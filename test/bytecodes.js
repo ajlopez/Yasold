@@ -856,3 +856,58 @@ exports['decompile returndatacopy'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile byte'] = function (test) {
+	var result = bc.decompile('1a');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'byte');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile shl'] = function (test) {
+	var result = bc.decompile('1b');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'shl');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile shr'] = function (test) {
+	var result = bc.decompile('1c');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'shr');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile sar'] = function (test) {
+	var result = bc.decompile('1d');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'sar');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile create2'] = function (test) {
+	var result = bc.decompile('f5');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'create2');
+	test.equal(result[0].value, null);
+};
+
