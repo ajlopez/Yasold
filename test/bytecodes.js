@@ -911,3 +911,14 @@ exports['decompile create2'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile unknown opcode'] = function (test) {
+	var result = bc.decompile('46');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, '0x46');
+	test.equal(result[0].value, null);
+};
+
