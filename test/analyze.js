@@ -172,6 +172,19 @@ exports['analyze recognizes two memory inits'] = function (test) {
 	test.equal(result.opcodes[4].offset, 0);
 };
 
+exports['analyze recognizes two memory inits with other values'] = function (test) {
+	var result = yasold.analyze('608060405200608060405200');
+	
+	test.ok(result);
+	test.ok(result.inits);
+	test.ok(Array.isArray(result.inits));
+	test.equal(result.inits.length, 2);
+	test.equal(result.inits[0].position, 0);
+	test.equal(result.inits[1].position, 4);
+	
+	test.equal(result.opcodes[4].offset, 0);
+};
+
 exports['analyze recognizes jumpi and jump with one byte address'] = function (test) {
 	var result = yasold.analyze('6000600015600957fe5b600956');
 	
