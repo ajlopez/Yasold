@@ -248,14 +248,14 @@ exports['decompile return'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
-exports['decompile throw'] = function (test) {
+exports['decompile invalid'] = function (test) {
 	var result = bc.decompile('fe');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
 	test.equal(result.length, 1);
 	
-	test.equal(result[0].opcode, 'throw');
+	test.equal(result[0].opcode, 'invalid');
 	test.equal(result[0].value, null);
 };
 
@@ -524,14 +524,14 @@ exports['decompile revert'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
-exports['decompile suicide'] = function (test) {
+exports['decompile self destruct'] = function (test) {
 	var result = bc.decompile('ff');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
 	test.equal(result.length, 1);
 	
-	test.equal(result[0].opcode, 'suicide');
+	test.equal(result[0].opcode, 'selfdestruct');
 	test.equal(result[0].value, null);
 };
 
