@@ -1,8 +1,8 @@
 
-var yasold = require('..');
+const yasold = require('..');
 
 exports['analyze with opcodes'] = function (test) {
-	var result = yasold.analyze('6060604052');
+	const result = yasold.analyze('6060604052');
 	
 	test.ok(result);
 	test.ok(result.opcodes);
@@ -23,7 +23,7 @@ exports['analyze with opcodes'] = function (test) {
 };
 
 exports['analyze push with nodes'] = function (test) {
-	var result = yasold.analyze('6060');
+	const result = yasold.analyze('6060');
 	
 	test.ok(result);
 	test.ok(result.nodes);
@@ -36,7 +36,7 @@ exports['analyze push with nodes'] = function (test) {
 };
 
 exports['analyze two pushes and add with nodes'] = function (test) {
-	var result = yasold.analyze('6060604001');
+	const result = yasold.analyze('6060604001');
 	
 	test.ok(result);
 	test.ok(result.nodes);
@@ -60,7 +60,7 @@ exports['analyze two pushes and add with nodes'] = function (test) {
 };
 
 exports['analyze two pushes and jumpi with nodes'] = function (test) {
-	var result = yasold.analyze('6060604057');
+	const result = yasold.analyze('6060604057');
 	
 	test.ok(result);
 	test.ok(result.nodes);
@@ -84,7 +84,7 @@ exports['analyze two pushes and jumpi with nodes'] = function (test) {
 };
 
 exports['analyze push and iszero'] = function (test) {
-	var result = yasold.analyze('606015');
+	const result = yasold.analyze('606015');
 	
 	test.ok(result);
 	test.ok(result.nodes);
@@ -104,7 +104,7 @@ exports['analyze push and iszero'] = function (test) {
 };
 
 exports['analyze push and jump'] = function (test) {
-	var result = yasold.analyze('606056');
+	const result = yasold.analyze('606056');
 	
 	test.ok(result);
 	test.ok(result.nodes);
@@ -124,7 +124,7 @@ exports['analyze push and jump'] = function (test) {
 };
 
 exports['analyze with stack'] = function (test) {
-	var result = yasold.analyze('6060604052');
+	const result = yasold.analyze('6060604052');
 	
 	test.ok(result);
 	test.ok(result.opcodes);
@@ -150,7 +150,7 @@ exports['analyze with stack'] = function (test) {
 };
 
 exports['analyze recognizes memory init'] = function (test) {
-	var result = yasold.analyze('6060604052');
+	const result = yasold.analyze('6060604052');
 	
 	test.ok(result);
 	test.ok(result.inits);
@@ -160,7 +160,7 @@ exports['analyze recognizes memory init'] = function (test) {
 };
 
 exports['analyze recognizes two memory inits'] = function (test) {
-	var result = yasold.analyze('606060405200606060405200');
+	const result = yasold.analyze('606060405200606060405200');
 	
 	test.ok(result);
 	test.ok(result.inits);
@@ -173,7 +173,7 @@ exports['analyze recognizes two memory inits'] = function (test) {
 };
 
 exports['analyze recognizes two memory inits with other values'] = function (test) {
-	var result = yasold.analyze('608060405200608060405200');
+	const result = yasold.analyze('608060405200608060405200');
 	
 	test.ok(result);
 	test.ok(result.inits);
@@ -186,7 +186,7 @@ exports['analyze recognizes two memory inits with other values'] = function (tes
 };
 
 exports['analyze recognizes jumpi and jump with one byte address'] = function (test) {
-	var result = yasold.analyze('6000600015600957fe5b600956');
+	const result = yasold.analyze('6000600015600957fe5b600956');
 	
 	test.ok(result);
 	test.ok(result.jumps);
@@ -201,7 +201,7 @@ exports['analyze recognizes jumpi and jump with one byte address'] = function (t
 };
 
 exports['analyze recognizes jumpdests'] = function (test) {
-	var result = yasold.analyze('60605b60015b50505b');
+	const result = yasold.analyze('60605b60015b50505b');
 	
 	test.ok(result);
 	test.ok(result.jumpdest);
@@ -213,7 +213,7 @@ exports['analyze recognizes jumpdests'] = function (test) {
 };
 
 exports['jumpdests with labels'] = function (test) {
-	var result = yasold.analyze('60605b60015b50505b');
+	const result = yasold.analyze('60605b60015b50505b');
 	
 	test.ok(result);
 	test.ok(result.jumpdest);
