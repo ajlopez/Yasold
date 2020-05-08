@@ -1,8 +1,8 @@
 
-var bc = require('../lib/bytecodes');
+const bc = require('../lib/bytecodes');
 
 function toHex(value) {
-	var hex = value.toString(16);
+	let hex = value.toString(16);
 	
 	if (hex.length % 2)
 		hex = '0' + hex;
@@ -11,7 +11,7 @@ function toHex(value) {
 }
 
 exports['decompile push1'] = function (test) {
-	var result = bc.decompile('6060');
+	const result = bc.decompile('6060');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -22,7 +22,7 @@ exports['decompile push1'] = function (test) {
 };
 
 exports['decompile two push1'] = function (test) {
-	var result = bc.decompile('60606040');
+	const result = bc.decompile('60606040');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -36,7 +36,7 @@ exports['decompile two push1'] = function (test) {
 };
 
 exports['decompile two push1 and mstore'] = function (test) {
-	var result = bc.decompile('6060604052');
+	const result = bc.decompile('6060604052');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -53,7 +53,7 @@ exports['decompile two push1 and mstore'] = function (test) {
 };
 
 exports['decompile two push1, mstore and callvalue'] = function (test) {
-	var result = bc.decompile('606060405234');
+	const result = bc.decompile('606060405234');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -73,7 +73,7 @@ exports['decompile two push1, mstore and callvalue'] = function (test) {
 };
 
 exports['decompile callvalue'] = function (test) {
-	var result = bc.decompile('34');
+	const result = bc.decompile('34');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -84,7 +84,7 @@ exports['decompile callvalue'] = function (test) {
 };
 
 exports['decompile add'] = function (test) {
-	var result = bc.decompile('01');
+	const result = bc.decompile('01');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -95,7 +95,7 @@ exports['decompile add'] = function (test) {
 };
 
 exports['decompile mul'] = function (test) {
-	var result = bc.decompile('02');
+	const result = bc.decompile('02');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -106,7 +106,7 @@ exports['decompile mul'] = function (test) {
 };
 
 exports['decompile sub'] = function (test) {
-	var result = bc.decompile('03');
+	const result = bc.decompile('03');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -117,7 +117,7 @@ exports['decompile sub'] = function (test) {
 };
 
 exports['decompile div'] = function (test) {
-	var result = bc.decompile('04');
+	const result = bc.decompile('04');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -128,7 +128,7 @@ exports['decompile div'] = function (test) {
 };
 
 exports['decompile sdiv'] = function (test) {
-	var result = bc.decompile('05');
+	const result = bc.decompile('05');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -139,7 +139,7 @@ exports['decompile sdiv'] = function (test) {
 };
 
 exports['decompile mod'] = function (test) {
-	var result = bc.decompile('06');
+	const result = bc.decompile('06');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -150,7 +150,7 @@ exports['decompile mod'] = function (test) {
 };
 
 exports['decompile smod'] = function (test) {
-	var result = bc.decompile('07');
+	const result = bc.decompile('07');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -161,7 +161,7 @@ exports['decompile smod'] = function (test) {
 };
 
 exports['decompile addmod'] = function (test) {
-	var result = bc.decompile('08');
+	const result = bc.decompile('08');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -172,7 +172,7 @@ exports['decompile addmod'] = function (test) {
 };
 
 exports['decompile mulmod'] = function (test) {
-	var result = bc.decompile('09');
+	const result = bc.decompile('09');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -183,7 +183,7 @@ exports['decompile mulmod'] = function (test) {
 };
 
 exports['decompile codecopy'] = function (test) {
-	var result = bc.decompile('39');
+	const result = bc.decompile('39');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -194,7 +194,7 @@ exports['decompile codecopy'] = function (test) {
 };
 
 exports['decompile iszero'] = function (test) {
-	var result = bc.decompile('15');
+	const result = bc.decompile('15');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -205,7 +205,7 @@ exports['decompile iszero'] = function (test) {
 };
 
 exports['decompile jumpi'] = function (test) {
-	var result = bc.decompile('57');
+	const result = bc.decompile('57');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -216,7 +216,7 @@ exports['decompile jumpi'] = function (test) {
 };
 
 exports['decompile jump'] = function (test) {
-	var result = bc.decompile('56');
+	const result = bc.decompile('56');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -227,7 +227,7 @@ exports['decompile jump'] = function (test) {
 };
 
 exports['decompile jumpdest'] = function (test) {
-	var result = bc.decompile('5b');
+	const result = bc.decompile('5b');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -238,7 +238,7 @@ exports['decompile jumpdest'] = function (test) {
 };
 
 exports['decompile return'] = function (test) {
-	var result = bc.decompile('f3');
+	const result = bc.decompile('f3');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -249,7 +249,7 @@ exports['decompile return'] = function (test) {
 };
 
 exports['decompile invalid'] = function (test) {
-	var result = bc.decompile('fe');
+	const result = bc.decompile('fe');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -260,7 +260,7 @@ exports['decompile invalid'] = function (test) {
 };
 
 exports['decompile dup1'] = function (test) {
-	var result = bc.decompile('80');
+	const result = bc.decompile('80');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -271,7 +271,7 @@ exports['decompile dup1'] = function (test) {
 };
 
 exports['decompile swap1'] = function (test) {
-	var result = bc.decompile('90');
+	const result = bc.decompile('90');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -282,8 +282,8 @@ exports['decompile swap1'] = function (test) {
 };
 
 exports['decompile swaps'] = function (test) {
-	for (var k = 1; k <= 16; k++) {
-		var result = bc.decompile(toHex(9 * 16 + k - 1));
+	for (let k = 1; k <= 16; k++) {
+		const result = bc.decompile(toHex(9 * 16 + k - 1));
 		
 		test.ok(result);
 		test.ok(Array.isArray(result));
@@ -295,8 +295,8 @@ exports['decompile swaps'] = function (test) {
 };
 
 exports['decompile dups'] = function (test) {
-	for (var k = 1; k <= 16; k++) {
-		var result = bc.decompile(toHex(8 * 16 + k - 1));
+	for (let k = 1; k <= 16; k++) {
+		const result = bc.decompile(toHex(8 * 16 + k - 1));
 		
 		test.ok(result);
 		test.ok(Array.isArray(result));
@@ -308,14 +308,14 @@ exports['decompile dups'] = function (test) {
 };
 
 exports['decompile pushs'] = function (test) {
-	for (var k = 1; k <= 32; k++) {
-        var code = toHex(6 * 16 + k - 1);
-        var value = '';
+	for (let k = 1; k <= 32; k++) {
+        const code = toHex(6 * 16 + k - 1);
+        let value = '';
         
-        for (var j = 1; j <= k; j++)
+        for (let j = 1; j <= k; j++)
             value += toHex(j);
         
-		var result = bc.decompile(code + value);
+		const result = bc.decompile(code + value);
 		
 		test.ok(result);
 		test.ok(Array.isArray(result));
@@ -327,7 +327,7 @@ exports['decompile pushs'] = function (test) {
 };
 
 exports['decompile pop'] = function (test) {
-	var result = bc.decompile('50');
+	const result = bc.decompile('50');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -338,7 +338,7 @@ exports['decompile pop'] = function (test) {
 };
 
 exports['decompile stop'] = function (test) {
-	var result = bc.decompile('00');
+	const result = bc.decompile('00');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -349,7 +349,7 @@ exports['decompile stop'] = function (test) {
 };
 
 exports['decompile eq'] = function (test) {
-	var result = bc.decompile('14');
+	const result = bc.decompile('14');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -360,7 +360,7 @@ exports['decompile eq'] = function (test) {
 };
 
 exports['decompile lt'] = function (test) {
-	var result = bc.decompile('10');
+	const result = bc.decompile('10');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -371,7 +371,7 @@ exports['decompile lt'] = function (test) {
 };
 
 exports['decompile gt'] = function (test) {
-	var result = bc.decompile('11');
+	const result = bc.decompile('11');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -382,7 +382,7 @@ exports['decompile gt'] = function (test) {
 };
 
 exports['decompile slt'] = function (test) {
-	var result = bc.decompile('12');
+	const result = bc.decompile('12');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -393,7 +393,7 @@ exports['decompile slt'] = function (test) {
 };
 
 exports['decompile sgt'] = function (test) {
-	var result = bc.decompile('13');
+	const result = bc.decompile('13');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -404,7 +404,7 @@ exports['decompile sgt'] = function (test) {
 };
 
 exports['decompile and'] = function (test) {
-	var result = bc.decompile('16');
+	const result = bc.decompile('16');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -415,7 +415,7 @@ exports['decompile and'] = function (test) {
 };
 
 exports['decompile or'] = function (test) {
-	var result = bc.decompile('17');
+	const result = bc.decompile('17');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -426,7 +426,7 @@ exports['decompile or'] = function (test) {
 };
 
 exports['decompile xor'] = function (test) {
-	var result = bc.decompile('18');
+	const result = bc.decompile('18');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -437,7 +437,7 @@ exports['decompile xor'] = function (test) {
 };
 
 exports['decompile not'] = function (test) {
-	var result = bc.decompile('19');
+	const result = bc.decompile('19');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -448,7 +448,7 @@ exports['decompile not'] = function (test) {
 };
 
 exports['decompile exp'] = function (test) {
-	var result = bc.decompile('0a');
+	const result = bc.decompile('0a');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -459,7 +459,7 @@ exports['decompile exp'] = function (test) {
 };
 
 exports['decompile signextend'] = function (test) {
-	var result = bc.decompile('0b');
+	const result = bc.decompile('0b');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -470,7 +470,7 @@ exports['decompile signextend'] = function (test) {
 };
 
 exports['decompile mload'] = function (test) {
-	var result = bc.decompile('51');
+	const result = bc.decompile('51');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -481,7 +481,7 @@ exports['decompile mload'] = function (test) {
 };
 
 exports['decompile sload'] = function (test) {
-	var result = bc.decompile('54');
+	const result = bc.decompile('54');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -492,7 +492,7 @@ exports['decompile sload'] = function (test) {
 };
 
 exports['decompile sstore'] = function (test) {
-	var result = bc.decompile('55');
+	const result = bc.decompile('55');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -503,7 +503,7 @@ exports['decompile sstore'] = function (test) {
 };
 
 exports['decompile sha3'] = function (test) {
-	var result = bc.decompile('20');
+	const result = bc.decompile('20');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -514,7 +514,7 @@ exports['decompile sha3'] = function (test) {
 };
 
 exports['decompile revert'] = function (test) {
-	var result = bc.decompile('fd');
+	const result = bc.decompile('fd');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -525,7 +525,7 @@ exports['decompile revert'] = function (test) {
 };
 
 exports['decompile self destruct'] = function (test) {
-	var result = bc.decompile('ff');
+	const result = bc.decompile('ff');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -536,7 +536,7 @@ exports['decompile self destruct'] = function (test) {
 };
 
 exports['decompile create'] = function (test) {
-	var result = bc.decompile('f0');
+	const result = bc.decompile('f0');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -547,7 +547,7 @@ exports['decompile create'] = function (test) {
 };
 
 exports['decompile call'] = function (test) {
-	var result = bc.decompile('f1');
+	const result = bc.decompile('f1');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -558,7 +558,7 @@ exports['decompile call'] = function (test) {
 };
 
 exports['decompile delegate call'] = function (test) {
-	var result = bc.decompile('f4');
+	const result = bc.decompile('f4');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -569,7 +569,7 @@ exports['decompile delegate call'] = function (test) {
 };
 
 exports['decompile static call'] = function (test) {
-	var result = bc.decompile('fa');
+	const result = bc.decompile('fa');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -580,7 +580,7 @@ exports['decompile static call'] = function (test) {
 };
 
 exports['decompile call code'] = function (test) {
-	var result = bc.decompile('f2');
+	const result = bc.decompile('f2');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -591,7 +591,7 @@ exports['decompile call code'] = function (test) {
 };
 
 exports['decompile gas'] = function (test) {
-	var result = bc.decompile('5a');
+	const result = bc.decompile('5a');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -602,7 +602,7 @@ exports['decompile gas'] = function (test) {
 };
 
 exports['decompile pc'] = function (test) {
-	var result = bc.decompile('58');
+	const result = bc.decompile('58');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -613,7 +613,7 @@ exports['decompile pc'] = function (test) {
 };
 
 exports['decompile msize'] = function (test) {
-	var result = bc.decompile('59');
+	const result = bc.decompile('59');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -624,7 +624,7 @@ exports['decompile msize'] = function (test) {
 };
 
 exports['decompile blockhash'] = function (test) {
-	var result = bc.decompile('40');
+	const result = bc.decompile('40');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -635,8 +635,8 @@ exports['decompile blockhash'] = function (test) {
 };
 
 exports['decompile logs'] = function (test) {
-	for (var k = 0; k < 5; k++) {
-		var result = bc.decompile(toHex(10 * 16 + k));
+	for (let k = 0; k < 5; k++) {
+		const result = bc.decompile(toHex(10 * 16 + k));
 		
 		test.ok(result);
 		test.ok(Array.isArray(result));
@@ -648,7 +648,7 @@ exports['decompile logs'] = function (test) {
 };
 
 exports['decompile mstore8'] = function (test) {
-	var result = bc.decompile('53');
+	const result = bc.decompile('53');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -659,7 +659,7 @@ exports['decompile mstore8'] = function (test) {
 };
 
 exports['decompile gaslimit'] = function (test) {
-	var result = bc.decompile('45');
+	const result = bc.decompile('45');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -670,7 +670,7 @@ exports['decompile gaslimit'] = function (test) {
 };
 
 exports['decompile number'] = function (test) {
-	var result = bc.decompile('43');
+	const result = bc.decompile('43');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -681,7 +681,7 @@ exports['decompile number'] = function (test) {
 };
 
 exports['decompile coinbase'] = function (test) {
-	var result = bc.decompile('41');
+	const result = bc.decompile('41');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -692,7 +692,7 @@ exports['decompile coinbase'] = function (test) {
 };
 
 exports['decompile timestamp'] = function (test) {
-	var result = bc.decompile('42');
+	const result = bc.decompile('42');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -703,7 +703,7 @@ exports['decompile timestamp'] = function (test) {
 };
 
 exports['decompile difficulty'] = function (test) {
-	var result = bc.decompile('44');
+	const result = bc.decompile('44');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -714,7 +714,7 @@ exports['decompile difficulty'] = function (test) {
 };
 
 exports['decompile address'] = function (test) {
-	var result = bc.decompile('30');
+	const result = bc.decompile('30');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -725,7 +725,7 @@ exports['decompile address'] = function (test) {
 };
 
 exports['decompile balance'] = function (test) {
-	var result = bc.decompile('31');
+	const result = bc.decompile('31');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -736,7 +736,7 @@ exports['decompile balance'] = function (test) {
 };
 
 exports['decompile origin'] = function (test) {
-	var result = bc.decompile('32');
+	const result = bc.decompile('32');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -747,7 +747,7 @@ exports['decompile origin'] = function (test) {
 };
 
 exports['decompile caller'] = function (test) {
-	var result = bc.decompile('33');
+	const result = bc.decompile('33');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -758,7 +758,7 @@ exports['decompile caller'] = function (test) {
 };
 
 exports['decompile calldataload'] = function (test) {
-	var result = bc.decompile('35');
+	const result = bc.decompile('35');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -769,7 +769,7 @@ exports['decompile calldataload'] = function (test) {
 };
 
 exports['decompile calldatasize'] = function (test) {
-	var result = bc.decompile('36');
+	const result = bc.decompile('36');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -780,7 +780,7 @@ exports['decompile calldatasize'] = function (test) {
 };
 
 exports['decompile calldatacopy'] = function (test) {
-	var result = bc.decompile('37');
+	const result = bc.decompile('37');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -791,7 +791,7 @@ exports['decompile calldatacopy'] = function (test) {
 };
 
 exports['decompile codesize'] = function (test) {
-	var result = bc.decompile('38');
+	const result = bc.decompile('38');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -802,7 +802,7 @@ exports['decompile codesize'] = function (test) {
 };
 
 exports['decompile gasprice'] = function (test) {
-	var result = bc.decompile('3a');
+	const result = bc.decompile('3a');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -813,7 +813,7 @@ exports['decompile gasprice'] = function (test) {
 };
 
 exports['decompile extcodesize'] = function (test) {
-	var result = bc.decompile('3b');
+	const result = bc.decompile('3b');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -824,7 +824,7 @@ exports['decompile extcodesize'] = function (test) {
 };
 
 exports['decompile extcodecopy'] = function (test) {
-	var result = bc.decompile('3c');
+	const result = bc.decompile('3c');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -835,7 +835,7 @@ exports['decompile extcodecopy'] = function (test) {
 };
 
 exports['decompile returndatasize'] = function (test) {
-	var result = bc.decompile('3d');
+	const result = bc.decompile('3d');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -846,7 +846,7 @@ exports['decompile returndatasize'] = function (test) {
 };
 
 exports['decompile returndatacopy'] = function (test) {
-	var result = bc.decompile('3e');
+	const result = bc.decompile('3e');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -857,7 +857,7 @@ exports['decompile returndatacopy'] = function (test) {
 };
 
 exports['decompile byte'] = function (test) {
-	var result = bc.decompile('1a');
+	const result = bc.decompile('1a');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -868,7 +868,7 @@ exports['decompile byte'] = function (test) {
 };
 
 exports['decompile shl'] = function (test) {
-	var result = bc.decompile('1b');
+	const result = bc.decompile('1b');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -879,7 +879,7 @@ exports['decompile shl'] = function (test) {
 };
 
 exports['decompile shr'] = function (test) {
-	var result = bc.decompile('1c');
+	const result = bc.decompile('1c');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -890,7 +890,7 @@ exports['decompile shr'] = function (test) {
 };
 
 exports['decompile sar'] = function (test) {
-	var result = bc.decompile('1d');
+	const result = bc.decompile('1d');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -901,7 +901,7 @@ exports['decompile sar'] = function (test) {
 };
 
 exports['decompile create2'] = function (test) {
-	var result = bc.decompile('f5');
+	const result = bc.decompile('f5');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
@@ -912,7 +912,7 @@ exports['decompile create2'] = function (test) {
 };
 
 exports['decompile unknown opcode'] = function (test) {
-	var result = bc.decompile('46');
+	const result = bc.decompile('46');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
