@@ -912,13 +912,24 @@ exports['decompile create2'] = function (test) {
 };
 
 exports['decompile unknown opcode'] = function (test) {
+	const result = bc.decompile('47');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, '0x47');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile chain id'] = function (test) {
 	const result = bc.decompile('46');
 	
 	test.ok(result);
 	test.ok(Array.isArray(result));
 	test.equal(result.length, 1);
 	
-	test.equal(result[0].opcode, '0x46');
+	test.equal(result[0].opcode, 'chainid');
 	test.equal(result[0].value, null);
 };
 
