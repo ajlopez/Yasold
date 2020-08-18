@@ -823,6 +823,17 @@ exports['decompile extcodesize'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile extcodehash'] = function (test) {
+	const result = bc.decompile('3f');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'extcodehash');
+	test.equal(result[0].value, null);
+};
+
 exports['decompile extcodecopy'] = function (test) {
 	const result = bc.decompile('3c');
 	
