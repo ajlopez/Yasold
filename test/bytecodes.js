@@ -944,3 +944,36 @@ exports['decompile chain id'] = function (test) {
 	test.equal(result[0].value, null);
 };
 
+exports['decompile beginsub'] = function (test) {
+	const result = bc.decompile('5c');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'beginsub');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile returnsub'] = function (test) {
+	const result = bc.decompile('5d');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'returnsub');
+	test.equal(result[0].value, null);
+};
+
+exports['decompile jumpsub'] = function (test) {
+	const result = bc.decompile('5e');
+	
+	test.ok(result);
+	test.ok(Array.isArray(result));
+	test.equal(result.length, 1);
+	
+	test.equal(result[0].opcode, 'jumpsub');
+	test.equal(result[0].value, null);
+};
+
